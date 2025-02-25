@@ -1,0 +1,36 @@
+(async function () {
+
+
+var s = document.createElement('script'); s.text = '(function() { if (typeof _bt === \'undefined\' && typeof window._bt === \'undefined\'){\nvar SITEID=\'cnn\';\n(function(b, t, r, a, i, n) {\n    b[\'bt\']=b[\'bt\'] || function() {\n        (b[\'_bt\']=b[\'_bt\']||[]).push(arguments);\n    },\n    i = t.createElement(r),\n    n = t.getElementsByTagName(r)[0];\n    i.async = 1;\n    i.src = a;\n    n.parentNode.insertBefore(i, n);\n})(\n    window,\n    document,\n    \'script\',\n 	\'https://cdn.boomtrain.com/p13n/\'+SITEID+\'/p13n.min.js\'\n);\nbt(\'initialize\', SITEID, {externalIds: {zync: \'a8090922-8695-4ff9-9061-53f66102e6ee:1740172442.0704603\'}});\n} })();'; document.body.appendChild(s);
+
+
+
+
+
+
+
+if (typeof document.interestCohort !== 'undefined') {
+    rejected_promise = 0;
+    const cohort = await document.interestCohort().catch((err) => {
+        rejected_promise = 1;
+    });
+
+    if (cohort && cohort.id) {
+        chid = cohort.id;
+    } else if (!cohort && rejected_promise) {
+        chid = 'rejected';
+    }
+
+    if (typeof chid !== 'undefined') {
+        url = new URL('https://live.rezync.com/' + 'sync?c=16b6410431b6374e780104abb0443ca8&p=3a6990c5d67727fd4d72f94b2d9c998e&k=cid-fetch');
+        url.searchParams.append("chid", chid);
+        var img = document.createElement('img');
+        img.hidden = true;
+        img.src = url;
+        document.body.appendChild(img);
+    }
+}
+
+
+
+})();
