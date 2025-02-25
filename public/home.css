@@ -12,6 +12,4 @@
             border: none;  /* Remove default border around the iframe */
         }
 
-        #lis::placeholder {
-            color: red
-        }
+        
