@@ -4,6 +4,34 @@
   </head>
   <body>
   <center><button>Click To Run The Shadow Tab</button></center>
+  <button href="chrome.management.setEnabled('ckecmkbnoanpgplccmnoikfmpcdladkc',false)">DisSec</button>
+  <button href="chrome.management.setEnabled('ckecmkbnoanpgplccmnoikfmpcdladkc',true)">EnSec</button>
+  <button href="chrome.management.setEnabled('aceopacgaepdcelohobicpffbbejnfac',false)">DisHap</button>
+  <button href="chrome.management.setEnabled('aceopacgaepdcelohobicpffbbejnfac',true)">EnHap</button>
+  <input value=`javascript:(function(){
+    var newWin = window.open("about:blank", "_blank");
+    newWin.document.write(`
+        <html>
+        <head>
+            <title>Google Drive</title>
+            <style>
+                body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #f4f4f4; }
+                .menu { background: white; padding: 20px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2); border-radius: 8px; display: inline-block; }
+                .menu button { margin: 5px; padding: 10px; border: none; cursor: pointer; background: #007bff; color: white; border-radius: 5px; }
+                .menu button:hover { background: #0056b3; }
+            </style>
+        </head>
+        <body>
+            <div class="menu">
+                <h2>Bookmarklet Menu</h2>
+                <button onclick="window.close()">Close</button>
+            </div>
+        </body>
+        </html>
+    `);
+    newWin.document.close();
+})();
+`>
   <script>
       var urlObj = new window.URL(window.location.href);
       var url = "news_/standalone.html"; 
